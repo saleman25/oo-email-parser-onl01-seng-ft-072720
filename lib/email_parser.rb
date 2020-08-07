@@ -4,7 +4,7 @@
 # or whitespace (' ').
 
 class EmailAddressParser
-  attr_accessor :email_addresses 
+  attr_accessor :name , :email_addresses 
   
 def initialize(email_addresses) 
   @email_addresses = email_addresses
@@ -12,7 +12,10 @@ def initialize(email_addresses)
  end  
   
 def parse
-
+email_addresses.split.collect do |addresses|
+  addresses.split(",")
 end 
+  .flatten.uniq
+ end 
   
 end
